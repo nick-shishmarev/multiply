@@ -8,7 +8,7 @@ def line_to_str(data, ex_number, errors_number):
 
 
 def str_to_line(string):
-    d = f"{string[0:2]}-{string[2:4]}-{string[4:8]}"
+    d = f"{string[0:4]}-{string[4:6]}-{string[6:8]}"
     n = int(string[8:11])
     e = int(string[11:])
     return d, n, e
@@ -98,7 +98,7 @@ while True:
     elif action == QUIT_CMD:
         print("До свидания!")
         if number > 0:
-            date_now = f"{dt.datetime.now():%d%m%Y}"
+            date_now = f"{dt.datetime.now():%Y%m%d}"
             errors = len(result)
             history = get_from_file(FILENAME)
             history += line_to_str(date_now, number, errors)
