@@ -106,7 +106,6 @@ def output_results(*args):
     titles_str = ('Дата', 'Решено', 'Ошибок')
     history = get_from_file(FILENAME)
     history_lst = [history[i:i+14] for i in range(0, len(history), 14)]
-    print(history_lst)
     out_txt.insert("1.0", output_window(history_lst, titles_str))
     out_txt.configure(state="disabled")
 
